@@ -6,4 +6,3 @@ class Question(models.Model):
 	title = models.CharField(max_length=120)
 	text = models.TextField()
 	rating = models.IntegerField(default=0)
-
