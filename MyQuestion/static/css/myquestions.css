@@ -1,27 +1,27 @@
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-  /*background-color: #f5f5f5;*/
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    /*background-color: #f5f5f5;*/
 }
 a {
-  color: #00cc00;
-  transition: 0.1s linear;
+    color: #00cc00;
+    transition: 0.1s linear;
 }
 a:hover {
-  color: #004400;
+    color: #004400;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
-  background-color: #f5f5f5;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #f5f5f5;
 }
 
 
@@ -30,16 +30,16 @@ a:hover {
 /* Not requi!!red for template or sticky footer method. */
 
 body > .container {
-  padding: 40px 15px 0;
+    padding: 40px 15px 0;
 }
 
 .footer > .container {
-  padding-right: 15px;
-  padding-left: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 code {
-  font-size: 80%;
+    font-size: 80%;
 }
 .centered {
     text-align: center;
@@ -55,7 +55,7 @@ code {
     border: solid 1px #CCCCFF;
     padding-left: 3px;
     padding-right: 3px;
-    
+
     font-family: monospace;
     background-color: #FFFFFF;
     text-align:center;
@@ -63,18 +63,18 @@ code {
 
 }
 .nopadding {
-  padding: 0px 0px 0;
-  margin: 0px  0px 0;
+    padding: 0px 0px 0;
+    margin: 0px  0px 0;
 }
 
 .question-list-item {
     margin-top: 20px;
-    /* border: solid 1px #B48E84;
-    border-radius: 10px; */
-    background-color: #ffffcc;
-    padding: 15px;
-    margin-left: 0px;
-    margin-right: 20px;
+/* border: solid 1px #B48E84;
+border-radius: 10px; */
+background-color: #ffffcc;
+padding: 15px;
+margin-left: 0px;
+margin-right: 20px;
 }
 
 .mytags {
@@ -95,10 +95,10 @@ code {
     margin-left: 3px;
 }
 block.asktag > a {
-  color:#ffffff;
+    color:#ffffff;
 }
 .space {
-  padding-top:20px;
+    padding-top:20px;
 }
 .mypages {
     padding-top: 60px;
@@ -106,4 +106,15 @@ block.asktag > a {
 
 .question-padding {
     padding-left: 0px;
+}
+
+.thumbnail {
+    width: 120px;
+    height: 120px;
+    display:block;
+    margin:auto;
+}
+
+h1 > a {
+    font-size: large;
 }
