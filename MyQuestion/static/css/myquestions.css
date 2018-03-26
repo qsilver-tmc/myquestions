@@ -1,0 +1,109 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  /*background-color: #f5f5f5;*/
+}
+a {
+  color: #00cc00;
+  transition: 0.1s linear;
+}
+a:hover {
+  color: #004400;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not requi!!red for template or sticky footer method. */
+
+body > .container {
+  padding: 40px 15px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+.centered {
+    text-align: center;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+.likes {
+    border: solid 1px #CCCCFF;
+    padding-left: 3px;
+    padding-right: 3px;
+    
+    font-family: monospace;
+    background-color: #FFFFFF;
+    text-align:center;
+    font-size: x-large;
+
+}
+.nopadding {
+  padding: 0px 0px 0;
+  margin: 0px  0px 0;
+}
+
+.question-list-item {
+    margin-top: 20px;
+    /* border: solid 1px #B48E84;
+    border-radius: 10px; */
+    background-color: #ffffcc;
+    padding: 15px;
+    margin-left: 0px;
+    margin-right: 20px;
+}
+
+.mytags {
+    padding-top: 20px;
+    font-size: 1.5rem;
+}
+
+.asktag {
+    border: solid 1px #CCCCFF;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 5px;
+    font-weight: 600;
+    font-family: monospace;
+    background-color: #33CC33;
+    text-align: center;
+    margin-right: 0px;
+    margin-left: 3px;
+}
+block.asktag > a {
+  color:#ffffff;
+}
+.space {
+  padding-top:20px;
+}
+.mypages {
+    padding-top: 60px;
+}
+
+.question-padding {
+    padding-left: 0px;
+}
