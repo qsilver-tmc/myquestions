@@ -3,10 +3,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Askme</title>
+    <title>Ask Me!</title>
 
     <LINK href="{% static "css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
     <LINK href="{% static "css/myquestions.css" %}" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" type="image/png" href="{% static "img/favicon.ico" %}">
 
 
 </head>
@@ -22,7 +23,7 @@
     <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-light" style="background-color: #ffffcc;"> 
-        <a class="navbar-brand" href="#">Ask Me</a>
+        <a class="navbar-brand" href="/">Ask Me</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,8 +31,9 @@
           
           <form class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Поиск..." aria-label="Поиск">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Спросить!</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Найти</button>
           </form>
+          <a class="btn btn-success my-2 my-sm-0" href="/new/" role="button" style="margin-left: 20px">Новый вопрос</a>
           <div class="col">
           </div>
           <div class="col-md-3">
@@ -50,12 +52,7 @@
         </div>
         <div class="col-md-4 mytags">
           <h2>Популярные теги</h2>
-          <a href="">see,</a>  
-          <a href="">the, </a>  
-          <a href="">example,</a>   
-          <a href="">below,</a>  
-          <a href="">for,</a>   
-          <a href="">better,</a> 
+          <a href="/tag/">div</a>  
           <h2>Лучшие участники</h2>
           <a href="">Dave</a><br>  
           <a href="">Chris</a><br>   

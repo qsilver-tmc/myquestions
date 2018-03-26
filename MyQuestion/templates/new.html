@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="title">
+  <h1>Создать вопрос</h1>
+</div>
+<div class="question-list-item">
+  <form>
+  <div class="form-group row">
+    <label for="inputTitle" class="col-sm-2 col-form-label form-margin">Вопрос</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputTitle" placeholder="Введите заголовок">
+    </div>
+
+    <label for="inputText" class="col-sm-2 col-form-label">Детали</label>
+    <div class="col-sm-10">
+      <textarea class="form-control form-margin" id="inputText" rows="7" placeholder="Введите подробное описание"></textarea>
+    </div>
+    
+    <label for="inputTags" class="col-sm-2 col-form-label form-margin">Теги</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputTags" placeholder="Введите теги">
+    </div>
+    
+    <div class="col-sm-2"></div>
+    <div class="col-sm-10"><button class="btn btn-success my-2 my-sm-0" type="submit">Спросить!</button></div>
+    
+
+  </div>
+</form>
+
+</div>
+
+{% endblock %}
+
+{% block login %}
+<div class="row nopadding">
+  <div class="col-md-auto nopadding" style="margin-bottom: 0px"><img src="{% static "img/lorem.jpg" %}" alt="123" width=45px height=45px display:block></img></div>
+  <div class="col">username <br>
+  <a href="/settings/">настройки</a>
+  <a href="">выйти</a></div>
+  
+</div>
+{% endblock %}
