@@ -7,103 +7,24 @@
 
 
 <div class="row">
-  <div class="col-md-3" style="padding-left: 0px; font-family: monospace">
-   <div class="container centered" style="padding-top: 10px; text-align: center">
-     <div class="row">
-      
-      <div class="thumbnail">
-        <img src="{% static "img/lorem.jpg" %}" alt="123" height="100%"></img>
-      </div>
-     </div>
-    <div class="row nopadding" style="padding-bottom: 10px"></div>
+  {% include "subtemplates/question_body.html" %}
 
-    <div class="col">
-      <h1>0</h1>
-    </div>
-
-    <div class="col">
-      <div class="btn-group" role="group" aria-label="likes">
-        <button type="button" class="btn btn-outline-success">+</button>
-        <button type="button" class="btn btn-outline-danger">-</button>
-      </div>
-    </div>
-    
-
-    </div>
+  {% for answer in answers %}
+  <div class="row question-list-item">
+    {% include "subtemplates/answer_body.html" %}
   </div>
-<div class="col-md-9 question-padding">
-  <h3>Как пропатчить kde2 под freebsd?</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-  <div class="w-100"></div>
-
-  <a href="">ответы(0)</a>
-  теги:
-  <span class="asktag">
-    <a href="">tag1</a>
-  </span>
-  <span class="asktag">
-    <a href="">tag2</a> 
-  </span>
-</div>
-</div>
-
-<div class="row question-list-item">
-  <div class="col-md-3" style="padding-left: 0px; font-family: monospace">
-   <div class="container centered" style="padding-top: 10px; text-align: center">
-     <div class="row">
-      
-      <div class="thumbnail">
-        <img src="{% static "img/lorem.jpg" %}" alt="123" height="100%"></img>
-      </div>
-     </div>
-    <div class="row nopadding" style="padding-bottom: 10px"></div>
-
-    <div class="col">
-      <h1>0</h1>
-    </div>
-
-    <div class="col">
-      <div class="btn-group" role="group" aria-label="likes">
-        <button type="button" class="btn btn-outline-success">+</button>
-        <button type="button" class="btn btn-outline-danger">-</button>
-      </div>
-    </div>
-    
-
-    </div>
-  </div>
-<div class="col-md-9 question-padding">
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	
-
-  <form>
-  	<div class="form-check">
-    <input type="checkbox" class="form-check-input" id="correctInput">
-    <label class="form-check-label" for="correctInput">Правильный ответ</label>
-  	</div>
-  </form>
-</div>
-
+  {% endfor %}
 </div>
 
 <form>
-<div class="col" style="margin-top: 40px; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 20px">
+  <div class="col" style="margin-top: 40px; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 20px">
     <textarea class="form-control form-margin" id="inputAnswer" rows="3" placeholder="Введите свой ответ"></textarea>
-<div class="row justify-content-end" style="padding-right: 15px;">
-	<button class="btn btn-success" type="submit">Ответить</button>
-</div>
-</div>
+    <div class="row justify-content-end" style="padding-right: 15px;">
+     <button class="btn btn-success" type="submit">Ответить</button>
+   </div>
+ </div>
 
 </form>
 
 {% endblock %}
 
-{% block login %}
-<div class="row nopadding">
-  <div class="col-md-auto nopadding" style="width: 45px; height: 45px"></div>
-  <div class="col" style="margin-top: 10px; margin-left: -5px">
-  <a href="/login/">вход</a>
-  <a href="/signup/">регистрация</a></div>
-</div>
-{% endblock %}

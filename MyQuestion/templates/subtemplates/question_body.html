@@ -1,0 +1,42 @@
+{% load static %}
+
+  <div class="col-md-3" style="padding-left: 0px; font-family: monospace">
+   <div class="container centered" style="padding-top: 10px; text-align: center">
+     <div class="row">
+      
+      <div class="thumbnail">
+        <img src="{% static "img/lorem.jpg" %}" alt="123" height="100%"></img>
+      </div>
+     </div>
+    <div class="row nopadding" style="padding-bottom: 10px"></div>
+
+    <div class="col">
+      <h1>{{ question.likes }}</h1>
+    </div>
+
+    <div class="col">
+      <div class="btn-group" role="group" aria-label="likes">
+        <button type="button" class="btn btn-outline-success">+</button>
+        <button type="button" class="btn btn-outline-danger">-</button>
+      </div>
+    </div>
+    
+
+    </div>
+  </div>
+<div class="col-md-9 question-padding">
+  <h3><a href="/question/1">{{ question.title }}</a></h3>
+  <p>{{ question.text }}</p>
+
+  <div class="w-100"></div>
+
+  <a href="/question/1">ответы({{ question.answers }})</a>
+  теги:
+  {% for tag in question.tags %}
+  <span class="badge badge-success asktag">
+    <a href="/tag/{{ tag }}/">
+      {{ tag }}
+    </a>
+  </span>
+  {% endfor %}
+</div>

@@ -1,0 +1,36 @@
+{% load static %}
+<div class="col-md-3" style="padding-left: 0px; font-family: monospace">
+   <div class="container centered" style="padding-top: 10px; text-align: center">
+     <div class="row">
+      
+      <div class="thumbnail">
+        <img src="{% static "img/lorem.jpg" %}" alt="123" height="100%"></img>
+      </div>
+     </div>
+    <div class="row nopadding" style="padding-bottom: 10px"></div>
+
+    <div class="col">
+      <h1>{{ answer.likes }}</h1>
+    </div>
+
+    <div class="col">
+      <div class="btn-group" role="group" aria-label="likes">
+        <button type="button" class="btn btn-outline-success">+</button>
+        <button type="button" class="btn btn-outline-danger">-</button>
+      </div>
+    </div>
+    
+
+    </div>
+  </div>
+<div class="col-md-9 question-padding">
+  <p>{{ answer.text }}</p>
+  
+
+  <form>
+    <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="correctInput">
+    <label class="form-check-label" for="correctInput">Правильный ответ</label>
+    </div>
+  </form>
+</div>

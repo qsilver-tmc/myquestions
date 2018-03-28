@@ -2,10 +2,12 @@
 {% load static %}
 
 {% block content %}
-<div class="title">
-  <h1>Новые вопросы</h1>
-</div>
 
+
+
+<div class="title">
+  <h1>Популярные вопросы</h1>
+</div>
 {% if questions %}
     {% for question in questions %}
       <div class="row question-list-item">
@@ -17,5 +19,6 @@
 {% endif %}
 
 {% include "subtemplates/paginator.html" %}
+
 {% endblock %}
 

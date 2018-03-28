@@ -2,65 +2,34 @@
 
 <!doctype html>
 <html lang="en">
+
 <head>
-    <title>Ask Me!</title>
+  <title>Ask Me!</title>
 
-    <LINK href="{% static "css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
-    <LINK href="{% static "css/myquestions.css" %}" rel="stylesheet" type="text/css">
-    <link rel="shortcut icon" type="image/png" href="{% static "img/favicon.ico" %}">
+  <link rel="shortcut icon" type="image/png" href="{% static "img/favicon.ico" %}">
 
+  <LINK href="{% static "css/bootstrap.min.css" %}" rel="stylesheet" type="text/css">
+  <LINK href="{% static "css/myquestions.css" %}" rel="stylesheet" type="text/css">
+  
+  <script src={% static "js/jquery-3.2.1.slim.min.js" %}></script>
+  <script src={% static "js/popper.min.js" %}></script>
+  <script src={% static "js/bootstrap.min.js" %}></script>
 
 </head>
 
-<body>
-    <script src={% static "js/jquery-3.2.1.slim.min.js" %}></script>
-    <script src={% static "js/popper.min.js" %}></script>
-    <script src={% static "js/bootstrap.min.js" %}></script>
-    
+<body> 
+  <header>
+    {% include "subtemplates/navbar.html" %}
+  </header>
 
-
-
-    <header>
-      <!-- Fixed navbar -->
-      <nav class="navbar navbar-expand-md navbar-light" style="background-color: #ffffcc;"> 
-        <a class="navbar-brand" href="/">Ask Me</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          
-          <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Поиск..." aria-label="Поиск">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Найти</button>
-          </form>
-          <a class="btn btn-success my-2 my-sm-0" href="/new/" role="button" style="margin-left: 20px">Новый вопрос</a>
-          <div class="col">
-          </div>
-          <div class="col-md-3">
-            {% block login %}
-            {% endblock %}
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          {% block content %}
-          {% endblock %}  
-        </div>
-        <div class="col-md-4 mytags">
-          <h2>Популярные теги</h2>
-          <a href="/tag/">div</a>  
-          <h2>Лучшие участники</h2>
-          <a href="">Dave</a><br>  
-          <a href="">Chris</a><br>   
-          <a href="">Ann</a><br> 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {% block content %}
+        {% endblock %}  
       </div>
-      </div>
+      {% include "subtemplates/sidebar.html" %}
     </div>
-    
-
+  </div>
 </body>
 </html>
