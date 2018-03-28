@@ -8,10 +8,55 @@
 <div class="title">
   <h1>Настройки: username</h1>
 </div>
-<div class="question-list-item">
+<script type="text/javascript">
+  $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
 
+<div class="question-list-item">
+  <div class="alert alert-warning" role="warning">
+  Ошибка! Что-то пошло не так.
+  </div>
+  <form>
+  <div class="form-group">
+  	<div class="form-group row">
+    <label for="inputLogin" class="col-sm-3 col-form-label">Логин</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputLogin" placeholder="Введите логин" value="username">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputEmail" class="col-sm-3 col-form-label">E-Mail</label>
+    <div class="col-sm-9">
+      <input type="email" class="form-control" id="inputEmail" placeholder="Введите e-mail" value="username@example.com">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputNick" class="col-sm-3 col-form-label">Псевдоним</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputNick" placeholder="Введите псевдоним" value="usernick">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="uploadAvatar" class="col-sm-3">Загрузите аватар</label>
+    <div class="col-sm-9">
+    	<div class="thumbnail" style="margin-left: 0px; margin-bottom: 10px">
+    		<img src="{% static "img/lorem.jpg/" %}" alt="">
+    	</div>
+    	<input type="file" class="form-control-file" id="uploadAvatar">
+    </div>
+  </div>	
+
+  <div class="row justify-content-center">
+  	<button type="submit" class="btn btn-success justify-content-center"style="margin-top: 10px; margin-bottom: 10px">Сохранить</button>
+  </div>
+</form>
 
 </div>
+</div>
+
 
 {% endblock %}
 

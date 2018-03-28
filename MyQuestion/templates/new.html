@@ -4,25 +4,34 @@
 {% block content %}
 
 
+<script type="text/javascript">
+  $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+
 <div class="title">
   <h1>Создать вопрос</h1>
 </div>
 <div class="question-list-item">
+  <div class="alert alert-warning" role="warning">
+  Ошибка формы
+  </div>
   <form>
   <div class="form-group row">
     <label for="inputTitle" class="col-sm-2 col-form-label form-margin">Вопрос</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputTitle" placeholder="Введите заголовок">
+      <input type="text" class="form-control" id="inputTitle" placeholder="Введите заголовок" data-toggle="tooltip" data-placement="right" title="Текст вопроса">
     </div>
-
     <label for="inputText" class="col-sm-2 col-form-label">Детали</label>
     <div class="col-sm-10">
-      <textarea class="form-control form-margin" id="inputText" rows="7" placeholder="Введите подробное описание"></textarea>
+      <textarea class="form-control form-margin" id="inputText" rows="7" placeholder="Введите подробное описание" data-toggle="tooltip" data-placement="right" title="Подробное описание вопроса"></textarea>
     </div>
     
     <label for="inputTags" class="col-sm-2 col-form-label form-margin">Теги</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputTags" placeholder="Введите теги">
+      <input type="text" class="form-control" id="inputTags" placeholder="Введите теги" data-toggle="tooltip" data-placement="right" title="Ключевые слова для поиска">
     </div>
     
     <div class="col-sm-2"></div>
@@ -31,6 +40,7 @@
 
   </div>
 </form>
+
 
 </div>
 

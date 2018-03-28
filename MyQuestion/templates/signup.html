@@ -8,9 +8,62 @@
 <div class="title">
   <h1>Регистрация</h1>
 </div>
+<script type="text/javascript">
+  $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
 <div class="question-list-item">
+  <div class="alert alert-warning" role="warning">
+  Ошибка! Имя уже занято.
+  </div>
+  <form>
+  <div class="form-group">
+  	<div class="form-group row">
+    <label for="inputLogin" class="col-sm-3 col-form-label">Логин</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputLogin" placeholder="Введите логин" data-toggle="tooltip" data-placement="right" title="Используется для входа. Допустимы латинские буквы и цифры, длина не более 10 символов.">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputEmail" class="col-sm-3 col-form-label">E-Mail</label>
+    <div class="col-sm-9">
+      <input type="email" class="form-control" id="inputEmail" placeholder="Введите e-mail" data-toggle="tooltip" data-placement="right" title="На e-mail придет код подтверждения.">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputNick" class="col-sm-3 col-form-label">Псевдоним</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="inputNick" placeholder="Введите псевдоним" data-toggle="tooltip" data-placement="right" title="Виден остальным пользователям.">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-3 col-form-label">Пароль</label>
+    <div class="col-sm-9">
+      <input type="password" class="form-control" id="inputPassword" placeholder="Введите пароль" data-toggle="tooltip" data-placement="right" title="Пароль должен содержать не менее 8 символов и состоять из символов латинского алфавита и/или цифр">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputRepeatPassword" class="col-sm-3 col-form-label">Подтверждение</label>
+    <div class="col-sm-9">
+      <input type="password" class="form-control" id="inputRepeatPassword" placeholder="Повторите пароль" data-toggle="tooltip" data-placement="right" title="Поля должны совпадать">
+    </div>
+  </div>
 
+  <div class="form-group row">
+    <label for="uploadAvatar" class="col-sm-3">Загрузите аватар</label>
+    <div class="col-sm-9">
+    	<input type="file" class="form-control-file" id="uploadAvatar">
+    </div>
+  </div>	
 
+  <div class="row justify-content-center">
+  	<button type="submit" class="btn btn-success justify-content-center"style="margin-top: 10px; margin-bottom: 10px">Регистрация</button>
+  </div>
+</form>
+
+</div>
 </div>
 
 {% endblock %}
