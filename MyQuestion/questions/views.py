@@ -1,15 +1,26 @@
 from django.shortcuts import render
+from django.core.paginator import Paginator
+
+question_example = {
+					'title': 'Как пропатчить kde2 под freebsd?',
+					'likes': 0,
+					'id': 1,
+					'tags': {'kde2', 'freebsd'},
+					'answers': 1,
+					'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}
+
+answer_example = {
+				'likes': 0,
+				'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}
+
 
 def index(request):
 	questions = []
-	for i in range(0,5):
-  		questions.append({
-		'title': 'Как пропатчить kde2 под freebsd?',
-		'likes': 0,
-		'tags': {'kde2', 'freebsd'},
-		'answers': 1,
-		'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'})
-	context = {'questions': questions}
+	for i in range(0,10):
+  		questions.append(question_example)
+	objects_page, paginator = paginate(questions, request)
+	fquestions = paginator.get_page(objects_page)
+	context = {'questions': fquestions}
 	return render(request, "index.html", context)
 
 def ask(request):
@@ -25,42 +36,35 @@ def settings(request):
 	return render(request, "settings.html", {})
 
 def question(request, question_id):
-	question = {
-		'title': 'Как пропатчить kde2 под freebsd?',
-		'likes': 0,
-		'tags': {'kde2', 'freebsd'},
-		'answers': 1,
-		'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}
-	
+	question = question_example
+	question['id'] = question_id
 	answers = []
 	for i in range(0,2):
-  		answers.append({
-		'likes': 0,
-		'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'})
-
+  		answers.append(answer_example)
 	context = {'question': question, 'answers': answers}
 	return render(request, "question.html", context)
 
 def tag(request, search_tag):
 	questions = []
-	for i in range(0,5):
-  		questions.append({
-		'title': 'Как пропатчить kde2 под freebsd?',
-		'likes': 0,
-		'tags': {'kde2', 'freebsd'},
-		'answers': 1,
-		'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'})
-	context = {'search_tag': search_tag, 'questions': questions};
+	for i in range(0,10):
+  		questions.append(question_example)
+	objects_page, paginator = paginate(questions, request)
+	fquestions = paginator.get_page(objects_page)
+	context = {'search_tag': search_tag, 'questions': fquestions}
 	return render(request, "by_tag.html", context)
 
 def hot(request):
 	questions = []
-	for i in range(0,5):
-  		questions.append({
-		'title': 'Как пропатчить kde2 под freebsd?',
-		'likes': 0,
-		'tags': {'kde2', 'freebsd'},
-		'answers': 1,
-		'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'})
-	context = {'questions': questions}
+	for i in range(0,10):
+  		questions.append(question_example)
+	objects_page, paginator = paginate(questions, request)
+	fquestions = paginator.get_page(objects_page)
+	context = {'questions': fquestions}
 	return render(request, "hot.html", context)
+
+def paginate(objects_list, request):
+    paginator = Paginator(objects_list, 3)
+    objects_page = request.GET.get('page')
+    if not objects_page or not objects_page.isdigit() or (int(objects_page) < 1) or (int(objects_page) > paginator.num_pages):
+    		objects_page = 1
+    return objects_page, paginator

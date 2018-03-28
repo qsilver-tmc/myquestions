@@ -25,16 +25,16 @@
     </div>
   </div>
 <div class="col-md-9 question-padding">
-  <h3><a href="/question/1">{{ question.title }}</a></h3>
+  <h3><a href="{% url 'question' question_id=question.id %}">{{ question.title }}</a></h3>
   <p>{{ question.text }}</p>
 
   <div class="w-100"></div>
 
-  <a href="/question/1">ответы({{ question.answers }})</a>
+  <a href="{% url 'question' question_id=question.id %}">ответы({{ question.answers }})</a>
   теги:
   {% for tag in question.tags %}
   <span class="badge badge-success asktag">
-    <a href="/tag/{{ tag }}/">
+    <a href="{% url 'tag' search_tag=tag %}">
       {{ tag }}
     </a>
   </span>
