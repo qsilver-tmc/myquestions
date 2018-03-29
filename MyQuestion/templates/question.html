@@ -5,12 +5,17 @@
 <div class="row">
   {% include "subtemplates/question_body.html" %}
 
-  {% for answer in answers %}
+  
+</div>
+{% if answers %}
+{% for answer in answers %}
   <div class="row question-list-item">
     {% include "subtemplates/answer_body.html" %}
   </div>
   {% endfor %}
-</div>
+{% else %}
+	<div class="row question-list-item justify-content-center">Еще никто не ответил на вопрос.</div>
+{% endif %}
 
 <form>
   <div class="col" style="margin-top: 40px; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 20px">

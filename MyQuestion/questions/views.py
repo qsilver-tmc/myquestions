@@ -17,7 +17,7 @@ answer_example = {
 
 
 def index(request):
-	questions = Question.objects.order_by('date')[:5]
+	questions = Question.objects.sort_date()
 	objects_page, paginator = paginate(questions, request)
 	questions = paginator.get_page(objects_page)
 	context = {'questions': questions}
@@ -36,30 +36,23 @@ def settings(request):
 	return render(request, "settings.html", {})
 
 def question(request, question_id):
-	question = question_example
-	question['id'] = question_id
-	answers = []
-	for i in range(0,2):
-  		answers.append(answer_example)
+	question = Question.objects.get(id=question_id)
+	answers = question.answer_set.all
 	context = {'question': question, 'answers': answers}
 	return render(request, "question.html", context)
 
 def tag(request, search_tag):
-	questions = []
-	for i in range(0,10):
-  		questions.append(question_example)
+	questions = Question.objects.by_tag(search_tag)
 	objects_page, paginator = paginate(questions, request)
-	fquestions = paginator.get_page(objects_page)
-	context = {'search_tag': search_tag, 'questions': fquestions}
+	questions = paginator.get_page(objects_page)
+	context = {'search_tag': search_tag, 'questions': questions}
 	return render(request, "by_tag.html", context)
 
 def hot(request):
-	questions = []
-	for i in range(0,10):
-  		questions.append(question_example)
+	questions = Question.objects.sort_hot()
 	objects_page, paginator = paginate(questions, request)
-	fquestions = paginator.get_page(objects_page)
-	context = {'questions': fquestions}
+	questions = paginator.get_page(objects_page)
+	context = {'questions': questions}
 	return render(request, "hot.html", context)
 
 def paginate(objects_list, request):
