@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
 
+from .models import Question
+
 question_example = {
 					'title': 'Как пропатчить kde2 под freebsd?',
 					'likes': 0,
@@ -15,12 +17,10 @@ answer_example = {
 
 
 def index(request):
-	questions = []
-	for i in range(0,10):
-  		questions.append(question_example)
+	questions = Question.objects.order_by('date')[:5]
 	objects_page, paginator = paginate(questions, request)
-	fquestions = paginator.get_page(objects_page)
-	context = {'questions': fquestions}
+	questions = paginator.get_page(objects_page)
+	context = {'questions': questions}
 	return render(request, "index.html", context)
 
 def ask(request):

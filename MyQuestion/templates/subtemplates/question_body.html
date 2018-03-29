@@ -11,7 +11,7 @@
     <div class="row nopadding" style="padding-bottom: 10px"></div>
 
     <div class="col">
-      <h1>{{ question.likes }}</h1>
+      <h1>{{ question.rating }}</h1>
     </div>
 
     <div class="col">
@@ -20,8 +20,6 @@
         <button type="button" class="btn btn-outline-danger">-</button>
       </div>
     </div>
-    
-
     </div>
   </div>
 <div class="col-md-9 question-padding">
@@ -30,12 +28,12 @@
 
   <div class="w-100"></div>
 
-  <a href="{% url 'question' question_id=question.id %}">ответы({{ question.answers }})</a>
+  <a href="{% url 'question' question_id=question.id %}">ответы({{ question.answer_set.all|length }})</a>
   теги:
-  {% for tag in question.tags %}
+   {% for tag in question.tags.all %}
   <span class="badge badge-success asktag">
-    <a href="{% url 'tag' search_tag=tag %}">
-      {{ tag }}
+    <a href="{% url 'tag' search_tag=tag.word %}">
+      {{ tag.word }}
     </a>
   </span>
   {% endfor %}
