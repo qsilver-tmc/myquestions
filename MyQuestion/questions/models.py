@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class QuestionManager(models.Manager):
 	def sort_date(self):
-		result_list = Question.objects.order_by('date')[:5]
+		result_list = Question.objects.order_by('-date')
 		return result_list
 	def sort_hot(self):
 		result_list = Question.objects.order_by('-rating')
