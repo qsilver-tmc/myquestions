@@ -25,7 +25,7 @@ SECRET_KEY = 's3*u=xjpqtu*f1s(@h(qy6bx=9kl2$d25pjao)vmg+@ha16m%5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'qsilvertmc.pythonanywhere.com']
 
 
 # Application definition
