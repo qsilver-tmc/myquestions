@@ -1,10 +1,9 @@
 {% load static %}
+{% load question_extras %}
 
         <div class="col-md-4 mytags">
           <h2>Популярные теги</h2>
-          <a href="{% url 'tag' search_tag='div' %}">div</a>  
+          {% show_popular_tags %}  
           <h2>Лучшие участники</h2>
-          <a href="">Dave</a><br>  
-          <a href="">Chris</a><br>   
-          <a href="">Ann</a><br> 
+          {% show_best_users %} 
       </div>
