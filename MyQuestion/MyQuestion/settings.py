@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+ALLOWED_HOSTS += ['qsilvertmc.pythonanywhere.com']
+ALLOWED_HOSTS += ['127.0.0.1']
+
+
 
 # Application definition
 
